@@ -1,0 +1,20 @@
+﻿@model List<SimpledEmployee>
+
+<h2>Simplified Employee Table</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Total time worked</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr style="@(employee.Hours < 100 ? "background-color: coral;" : "")">
+                <td>@employee.Name</td>
+                <td>@Math.Round(employee.Hours) hrs</td>
+            </tr>
+        }
+    </tbody>
+</table>
